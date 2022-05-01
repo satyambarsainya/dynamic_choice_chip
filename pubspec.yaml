@@ -1,7 +1,7 @@
 name: dynamic_choice_chip
 description: This flutter plugin can be used to render the dynamic choice chip, where developer can pass the list.
 version: 0.0.1
-homepage:
+homepage: https://github:com/satyambarsainya/dynamic_choice_chip
 
 environment:
   sdk: ">=2.16.2 <3.0.0"
