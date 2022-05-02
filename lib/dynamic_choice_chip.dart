@@ -41,6 +41,7 @@ class DynamicChoiceChip extends StatefulWidget {
 class DynamicChoiceChipState extends State<DynamicChoiceChip> {
   String selectedIndex = "";
   List filteredDataList = [];
+  late int originalIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +65,7 @@ class DynamicChoiceChipState extends State<DynamicChoiceChip> {
                       .contains(text)) {
                     setState(() {
                       filteredList.add(widget.dataSource[i]);
+                      originalIndex = i;
                       filteredDataList = filteredList.toSet().toList();
                     });
                   }
@@ -220,7 +222,7 @@ class DynamicChoiceChipState extends State<DynamicChoiceChip> {
                         ),
                       ),
                       onPressed: () {
-                        widget.onTap(int.parse(selectedIndex),
+                        widget.onTap(originalIndex,
                             filteredDataList[int.parse(selectedIndex)]);
                         Navigator.pop(context);
                       },
